@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [cdk-overlay-container] {
+    border-style: none;
+  }
+}
+
+mat-dialog-content,
+mat-dialog-content::before,
+mat-dialog-content::after {
+  border-style: none !important;
+}
+
+::ng-deep .dein-dialog-selector mat-label.outlineTest,
+::ng-deep .dein-dialog-selector mat-label.outlineTest::before,
+::ng-deep .dein-dialog-selector mat-label.outlineTest::after {
+  border-style: none !important;
+}
+
+::ng-deep .mat-form-field-outline,
+::ng-deep .mat-form-field-outline::before,
+::ng-deep .mat-form-field-outline::after {
+  border-width: 0 !important;
+  border-style: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  ::before {
+    border-style: none;
+  }
+  ::after {
+    border-style: none;
+  }
+}
