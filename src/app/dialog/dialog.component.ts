@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { User } from '../../models/user.class';
 import {
   MatDialogActions,
   MatDialogClose,
@@ -29,4 +30,12 @@ import {
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss',
 })
-export class DialogComponent {}
+export class DialogComponent {
+  user = new User();
+  birthDate: Date = new Date();
+
+  saveUser() {
+    this.user.birthDate = this.birthDate.getTime();
+    console.log('user', this.user);
+  }
+}

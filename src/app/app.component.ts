@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Firestore, collection, doc } from '@angular/fire/firestore';
 @Component({
   selector: 'app-root',
   imports: [

@@ -5,6 +5,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ChangeDetectionStrategy, inject, model, signal } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { User } from '../../models/user.class';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -32,6 +33,10 @@ export class UserComponent {
   readonly dialog = inject(MatDialog);
   readonly animal = signal('');
   readonly name = model('');
+
+  user: User = new User();
+
+  constructor() {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent);
