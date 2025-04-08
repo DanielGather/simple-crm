@@ -6,6 +6,8 @@ import { ChangeDetectionStrategy, inject, model, signal } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.class';
+import { Firestore, collection, doc } from '@angular/fire/firestore';
+
 import {
   MAT_DIALOG_DATA,
   MatDialog,
