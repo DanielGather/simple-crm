@@ -1,0 +1,30 @@
+.mat-mdc-card {
+  border-radius: unset;
+  background-color: white;
+}
+
+.user-table {
+  tr {
+    cursor: pointer;
+    height: 48px;
+    &:first-child {
+      &:hover {
+        background-color: unset;
+      }
+      cursor: unset;
+    }
+    th {
+      &:first-child {
+        padding-left: 16px;
+      }
+    }
+    td {
+      &:first-child {
+        padding-left: 16px;
+      }
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+}

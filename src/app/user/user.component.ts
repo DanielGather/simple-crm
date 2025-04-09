@@ -6,6 +6,7 @@ import { ChangeDetectionStrategy, inject, model, signal } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.class';
+import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, doc } from '@angular/fire/firestore';
 
 import {
@@ -27,6 +28,7 @@ import { DialogComponent } from '../dialog/dialog.component';
     MatInputModule,
     FormsModule,
     MatDialogModule,
+    MatCardModule,
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
