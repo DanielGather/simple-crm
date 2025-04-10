@@ -7,20 +7,15 @@
       <th>E-Mail</th>
       <th>City</th>
     </tr>
+    @for(user of allUsers; track user.firstName){
     <tr
       class="h-12 text-left text-sm border-b border-solid border-t-0 border-l-0 border-r-0 border-gray-400"
     >
-      <td>Daniel</td>
-      <td>gather.danielatyahoo.de</td>
-      <td>Schwalmtal</td>
+      <td>{{ user.firstName }} {{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.city }}</td>
     </tr>
-    <tr
-      class="h-12 text-left text-sm border-b border-solid border-t-0 border-l-0 border-r-0 border-gray-400"
-    >
-      <td>Daniel</td>
-      <td>gather.danielatyahoo.de</td>
-      <td>Schwalmtal</td>
-    </tr>
+    }
   </table>
 </mat-card>
 

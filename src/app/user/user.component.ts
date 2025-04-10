@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.class';
 import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, doc } from '@angular/fire/firestore';
-
+import { collectionData } from '@angular/fire/firestore';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -34,13 +34,24 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
+  allUsers: any[] = [];
   readonly dialog = inject(MatDialog);
   readonly animal = signal('');
   readonly name = model('');
+  firestore = inject(Firestore);
 
   user: User = new User();
 
   constructor() {}
+
+  ngOnInit() {
+    const usersRef = collection(this.firestore, 'users'); // ← das ist korrekt
+    collectionData(usersRef).subscribe((users) => {
+      console.log('Nutzer:', users);
+      this.allUsers = users;
+    });
+    console.log('Test', this.allUsers);
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent);
