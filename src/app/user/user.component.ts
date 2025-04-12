@@ -6,6 +6,7 @@ import { ChangeDetectionStrategy, inject, model, signal } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.class';
+import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, doc } from '@angular/fire/firestore';
 import { collectionData } from '@angular/fire/firestore';
@@ -29,6 +30,7 @@ import { DialogComponent } from '../dialog/dialog.component';
     FormsModule,
     MatDialogModule,
     MatCardModule,
+    RouterLink,
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
@@ -45,12 +47,11 @@ export class UserComponent {
   constructor() {}
 
   ngOnInit() {
-    const usersRef = collection(this.firestore, 'users'); // ← das ist korrekt
-    collectionData(usersRef).subscribe((users) => {
+    const usersRef = collection(this.firestore, 'users');
+    collectionData(usersRef, { idField: 'customId' }).subscribe((users) => {
       console.log('Nutzer:', users);
       this.allUsers = users;
     });
-    console.log('Test', this.allUsers);
   }
 
   openDialog(): void {

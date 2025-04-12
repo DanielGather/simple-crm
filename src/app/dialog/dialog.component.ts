@@ -43,7 +43,7 @@ import {
 })
 export class DialogComponent {
   constructor() {}
-  readonly dialog = inject(MatDialogRef);
+  public readonly dialog = inject(MatDialogRef);
   loading: boolean = false;
   firestore: Firestore = inject(Firestore);
   user = new User();

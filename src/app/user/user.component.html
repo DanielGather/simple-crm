@@ -9,6 +9,7 @@
     </tr>
     @for(user of allUsers; track user.firstName){
     <tr
+      [routerLink]="'/user/' + user.customId"
       class="h-12 text-left text-sm border-b border-solid border-t-0 border-l-0 border-r-0 border-gray-400"
     >
       <td>{{ user.firstName }} {{ user.lastName }}</td>
