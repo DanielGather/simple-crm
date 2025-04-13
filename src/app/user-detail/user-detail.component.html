@@ -1,4 +1,15 @@
 <mat-card class="min-h-[250px] !bg-orange-700 flex justify-end">
+  <button
+    class="!absolute right-1 top-1"
+    mat-icon-button
+    aria-label="Example icon button with a vertical three dot icon"
+    [matMenuTriggerFor]="menuHeader"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menuHeader="matMenu">
+    <button mat-menu-item (click)="editUser()">Edit</button>
+  </mat-menu>
   <mat-card-content class="!flex">
     <img
       class="w-[100px] h-[80px] rounded-full object-cover"
@@ -6,18 +17,30 @@
       alt="Mann"
     />
     <div class="ml-[32px] flex flex-col text-white">
-      <h2 class="m-0">Max Mustermann</h2>
-      <p class="mt-2">email&#64;emdaail.de</p>
+      <h2 class="m-0">{{ user.firstName }} {{ user.lastName }}</h2>
+      <p class="mt-2">{{ user.email }}</p>
     </div>
   </mat-card-content>
 </mat-card>
 
-<mat-card class="mt-8">
+<mat-card class="mt-8 relative">
+  <button
+    class="!absolute right-1 top-1"
+    mat-icon-button
+    aria-label="Example icon button with a vertical three dot icon"
+    [matMenuTriggerFor]="menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="editAddress()">Edit</button>
+  </mat-menu>
+
   <mat-card-header>
     <mat-card-title>Address</mat-card-title>
   </mat-card-header>
   <mat-card-content class="mt-4">
-    <p class="m-0">Musterstr. 23</p>
-    <p class="m-0">41312 Schwalmtal</p>
+    <p class="m-0">{{ user.street }}</p>
+    <p class="m-0">{{ user.zipCode }} {{ user.city }}</p>
   </mat-card-content>
 </mat-card>

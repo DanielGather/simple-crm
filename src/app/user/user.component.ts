@@ -56,7 +56,6 @@ export class UserComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent);
-
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
       if (result !== undefined) {
