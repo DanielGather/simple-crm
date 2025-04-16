@@ -64,4 +64,8 @@ export class UserDetailComponent {
     dialog.componentInstance.user = new User(this.user.toJSON());
     dialog.componentInstance.userId = this.userId;
   }
+
+  test() {
+    console.log(test);
+  }
 }
